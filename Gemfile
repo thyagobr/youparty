@@ -38,3 +38,6 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'google-api-client', '>0.7'
+gem 'oauth2'
+gem 'signet-rails'
