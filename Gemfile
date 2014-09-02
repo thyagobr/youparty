@@ -41,3 +41,5 @@ gem 'spring',        group: :development
 gem 'google-api-client', '>0.7'
 gem 'oauth2'
 gem 'signet-rails'
+gem 'thin'
+gem 'launchy'
