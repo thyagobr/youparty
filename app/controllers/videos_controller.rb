@@ -33,7 +33,7 @@ class VideosController < ApplicationController
         :scope => ['https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/plus']
       )
       auhtorization.code = params[:code]
-      auhtorization.fetch_access_token!
+      auhtorization.access_token = response_hash["access_token"]
       client = Google::APIClient.new(
         :application_name => "Youparty",
         :application_version => "0.1",
@@ -41,16 +41,14 @@ class VideosController < ApplicationController
       youtube = client.discovered_api("youtube", "v3")
       opts = {}
       opts[:part] = 'id,snippet'
+      opts[:q] = "gw2 mesmer"
       search_response = client.execute!(
         :api_method => youtube.search.list,
         :parameters => opts
       )
 
-      puts "Search response:"
-      puts search_response
+      @search_response = search_response.data
     end
-    puts "END!!!!!"
-    render nothing: true
   end
 
   private
