@@ -74,8 +74,8 @@ class VideosController < ApplicationController
       request = Net::HTTP::Post.new(uri.path, {'Content-Type' => 'application/json'})
       request.set_form_data({
         :code => params[:code],
-        :client_id => "586140555385-r9mihpkqjk7b7ggmjtgm8enaph770ltr.apps.googleusercontent.com",
-        :client_secret => "YV-x_rUs84qOp7mnHHdpempe",
+        :client_id => "586140555385-m2lijkaqpbt7v7i3v7olg73i66cnrkfl.apps.googleusercontent.com",
+        :client_secret => "fHQVb_cwRsx1IR6G6d1n0VJY",
         :redirect_uri => "http://localhost:3000/oauth/youtube/callback",
         :grant_type => "authorization_code"
         })
@@ -111,7 +111,7 @@ class VideosController < ApplicationController
       puts search_response
     end
     puts "END!!!!!"
-    render :nothing
+    render nothing: true
   end
 
   private
