@@ -1,1 +1,3 @@
-<%= @search_response.items %>
+<% @search_response.items.each do |video| %>
+  <p><%= video.snippet.title %></p>
+<% end %>
